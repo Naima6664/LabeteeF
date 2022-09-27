@@ -1,0 +1,34 @@
+nav a {
+    display: block;
+    color: #eb5d1e;
+    float: right;
+    padding: 15px;
+
+
+}
+
+
+a :hover {
+    color: #eb5d1e;
+}
+
+.navbar-fixed-bottom,
+.navbar-fixed-top {
+    position: absolute !important;
+}
+
+
+button {
+    background: #eb5d1e;
+}
+
+.btn {
+    color: white;
+
+}
+
+nav abbr {
+    color: #eb5d1e;
+    font-weight: bold;
+    padding-left: 10px;
+}
