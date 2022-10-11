@@ -1,12 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "cli": {
-    "analytics": "4203232d-8b32-4c9f-81a1-b7b608c38d31"
-  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "project": {
+    "labete-fe": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/project",
+            "outputPath": "dist/labete-fe",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -36,9 +33,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [
-              "node_modules/chart.js/dist/chart.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -77,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "project:build:production"
+              "browserTarget": "labete-fe:build:production"
             },
             "development": {
-              "browserTarget": "project:build:development"
+              "browserTarget": "labete-fe:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -88,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "project:build"
+            "browserTarget": "labete-fe:build"
           }
         },
         "test": {
@@ -112,5 +107,5 @@
       }
     }
   },
-  "defaultProject": "labetee"
+  "defaultProject": "labete-fe"
 }
