@@ -1,4 +1,5 @@
 import { Candidate } from './candidate';
+import { User } from './user';
 
 export const CAN: Candidate[] = [
   {
@@ -32,5 +33,16 @@ export const CAN: Candidate[] = [
     address: 'addis ababa',
     phone: '09881742455',
     sex: 'Female',
+  },
+];
+export const USER: User[] = [
+  {
+    full_name: 'nemia',
+    user_ID: '2020',
+    BDate: '30',
+    Phone: '0988174455',
+    Email: 'boode@gmail.com',
+    Sex: 'F',
+    role_ID: '2212',
   },
 ];

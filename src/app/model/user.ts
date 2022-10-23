@@ -1,9 +1,9 @@
 export interface User {
   full_name: string;
-  user_ID: number;
-  BDate: Date;
-  Phone: number;
+  user_ID: string;
+  BDate: string;
+  Phone: string;
   Email: string;
   Sex: string;
-  role_ID: number;
+  role_ID: string;
 }
