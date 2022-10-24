@@ -9,6 +9,7 @@ export const CAN: Candidate[] = [
     address: 'addis ababa',
     phone: '0988174455',
     sex: 'Female',
+    JobType:'Part-Time'
   },
   {
     name: 'Abduljaber',
@@ -17,6 +18,7 @@ export const CAN: Candidate[] = [
     address: 'addis ababa',
     phone: '0817283783',
     sex: 'Female',
+    JobType:'Full-Time'
   },
   {
     name: 'NEMIAMA',
@@ -25,6 +27,7 @@ export const CAN: Candidate[] = [
     address: 'addis ababa',
     phone: '09881743455',
     sex: 'Female',
+    JobType:'Full-Time'
   },
   {
     name: 'ABD',
@@ -33,6 +36,7 @@ export const CAN: Candidate[] = [
     address: 'addis ababa',
     phone: '09881742455',
     sex: 'Female',
+    JobType:'Full-Time'
   },
 ];
 export const USER: User[] = [
@@ -44,5 +48,6 @@ export const USER: User[] = [
     Email: 'boode@gmail.com',
     Sex: 'F',
     role_ID: '2212',
+    JobType:'Full-Time'
   },
 ];

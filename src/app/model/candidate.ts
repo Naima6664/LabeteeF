@@ -5,4 +5,5 @@ export interface Candidate {
   address: string;
   phone: string;
   sex: string;
+  JobType:string;
 }
