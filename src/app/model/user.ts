@@ -6,4 +6,5 @@ export interface User {
   Email: string;
   Sex: string;
   role_ID: string;
+  JobType: string;
 }
