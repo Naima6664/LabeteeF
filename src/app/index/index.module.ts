@@ -30,12 +30,14 @@ import { CandidateMapComponent } from './candidate-map/candidate-map.component';
     CandidatesComponent,
     CandidateDetailComponent,
     CandidateMapComponent
+    
   ],
   imports: [
     CommonModule,
     IndexRoutingModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+  
   ]
 })
 export class IndexModule { }

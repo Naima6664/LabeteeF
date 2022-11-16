@@ -56,7 +56,8 @@ const routes: Routes = [
       {
         path:'candidate-map',
         component:CandidateMapComponent
-      }
+      },
+      
     ],
   },
 ];
