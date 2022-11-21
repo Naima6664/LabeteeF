@@ -7,11 +7,17 @@ import { SidebarcComponent } from './admin/sidebarc/sidebarc.component';
 import { WrapperComponent } from './admin/wrapper/wrapper.component';
 import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { SigninComponent } from './signin/signin.component';
 
 const routes: Routes = [
   {
     path:'',
     loadChildren:()=>import('./index/index.module').then(m=>m.IndexModule)
+  },
+ 
+  {
+    path:'loginn',
+    component:SigninComponent
   },
   {
     path:'login',
