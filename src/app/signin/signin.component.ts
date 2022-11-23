@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { FormlyFieldConfig } from '@ngx-formly/core';
 
 @Component({
   selector: 'app-signin',
@@ -6,10 +8,41 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signin.component.scss']
 })
 export class SigninComponent implements OnInit {
+  login = {
+    username: '',
+    password: '',
+  };
+  form = new FormGroup({});
+  model = {};
+  fields: FormlyFieldConfig[] = [
+    {
+      key: 'email',
+      type: 'input',
+      props: {
+        label: 'Email address',
+        placeholder: 'Enter email',
+        required: true,
+      }
+    },
+    {
+      key: 'name',
+      type: 'input',
+      props: {
+        label: 'username',
+        placeholder: 'Enter username',
+        required: true,
+      }
+    }
+  ];
+
+  onSubmit(model: any) {
+    console.log(model);
+  }
 
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
