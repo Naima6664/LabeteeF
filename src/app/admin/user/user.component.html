@@ -1,0 +1,112 @@
+<body class="hold-transition sidebar-mini layout-fixed">
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>{{ tableName }}</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+              <li class="breadcrumb-item active">{{ tableName }}</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">{{ tableName }} List</h3>
+                <a
+                  type="button"
+                  class="btn btn-outline-primary float-sm-right"
+                  href="/admin/adduser"
+                >
+                  Add New User
+                </a>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <p-table
+                  #datatable
+                  [value]="users"
+                  [paginator]="true"
+                  [rows]="10"
+                  [showCurrentPageReport]="true"
+                  currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                  [rowsPerPageOptions]="[10, 15, 20]"
+                  [filterDelay]="0"
+                  [globalFilterFields]="['full_name', 'user_name', 'email']"
+                >
+                  <ng-template pTemplate="caption">
+                    <div style="text-align: right">
+                      <i class="pi pi-search" style="margin: 4px 4px 0 0"></i>
+                      <input
+                        type="text"
+                        pInputText
+                        size="50"
+                        placeholder="Global Filter"
+                        style="width: auto"
+                        (input)="
+                          datatable.filterGlobal(
+                            $any($event.target).value,
+                            'contains'
+                          )
+                        "
+                      />
+                    </div>
+                  </ng-template>
+                  <ng-template pTemplate="header">
+                    <tr>
+                      <th>Full Name</th>
+                      <th>UserName</th>
+                      <th>Email</th>
+                      <th>Role</th>
+                      <th>Actions</th>
+                    </tr>
+                  </ng-template>
+                  <ng-template pTemplate="body" let-user>
+                    <tr>
+                      <td>{{ user.full_name }}</td>
+                      <td>{{ user.user_name }}</td>
+                      <td>{{ user.email }}</td>
+                      <td>{{ getRoleName(user.role_id) }}</td>
+
+                      <td>
+                        <a
+                          class="btn btn-info btn-sm mr-3"
+                          [routerLink]=""
+                          [routerLink]="['/admin/adduser']"
+                          [queryParams]="{ type: 'edit', id: user.id }"
+                        >
+                          <i class="fas fa-pencil-alt"> </i>
+                          Edit
+                        </a>
+                        <a
+                          class="btn btn-danger btn-sm mr-3"
+                          (click)="onDelete(user)"
+                        >
+                          <i class="fas fa-trash"> </i>
+                          Delete
+                        </a>
+                      </td>
+                    </tr>
+                  </ng-template>
+                </p-table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
