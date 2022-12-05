@@ -23,7 +23,6 @@ import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AdminModule,
     FormsModule,
     ReactiveFormsModule,
     FormlyModule.forRoot({

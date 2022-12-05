@@ -16,7 +16,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./index/index.module').then((m) => m.IndexModule),
   },
-
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./admin/admin.module').then((m) => m.AdminModule),
+  },
   {
     path: 'loginn',
     component: SigninComponent,
@@ -25,17 +29,7 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent,
   },
-  {
-    path: 'admin',
-    component: AdminComponent,
-    children: [
-      { path: 'header', component: MheaderComponent },
-      { path: 'sidebar', component: SidebarComponent },
-      { path: 'wrapper', component: WrapperComponent },
-      { path: 'sidebc', component: SidebarcComponent },
-      { path: 'user', component: UserComponent },
-    ],
-  },
+ 
   {
     path: '**',
     component: NotFoundComponent,
