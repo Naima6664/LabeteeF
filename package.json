@@ -24,7 +24,6 @@
     "@sweetalert2/ngx-sweetalert2": "^12.0.2",
     "@swimlane/ngx-datatable": "^20.1.0",
     "bootstrap": "^5.2.2",
-    "primeng": "^13.4.1",
     "rxjs": "~7.5.0",
     "sweetalert2": "^11.6.15",
     "tslib": "^2.3.0",
