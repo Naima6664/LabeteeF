@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 import Swal from 'sweetalert2';
-import { AdminService, CANDIDATE } from '../admin.service';
+import { AdminService ,CANDIDATE } from '../admin.service';
 @Component({
   selector: 'app-candidates',
   templateUrl: './candidates.component.html',
-  styleUrls: ['./candidates.component.scss'],
+  styleUrls: ['./candidates.component.scss']
 })
 export class CandidatesComponent implements OnInit {
   candidates: CANDIDATE[] = [];
@@ -14,7 +14,7 @@ export class CandidatesComponent implements OnInit {
   constructor(private adminservice: AdminService) {}
 
   ngOnInit(): void {
-    // this.adminservice.getCandidates();this.candidates.subscribe((candidates: any) => (this.candidates = candidates));
+    this.adminservice.getCandidates();this.candidates.subscribe((candidates: any) => (this.candidates = candidates));
   }
 
   onDelete(candidate: CANDIDATE) {
@@ -28,13 +28,11 @@ export class CandidatesComponent implements OnInit {
       confirmButtonText: 'Yes, delete it!',
     }).then((result) => {
       if (result.isConfirmed) {
-        this.adminservice.deleteCandidate(candidate);
-        candidate.subscribe(
-          () =>
-            (this.candidates = this.candidates.filter(
-              (t) => t.id !== candidate.id
-            ))
-        );
+        this.adminservice
+          .deleteCandidate(candidate)
+          candidate.subscribe(
+            () => (this.candidates= this.candidates.filter((t) => t.id !== candidate.id))
+          );
         Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
         this.candidates = this.candidates.filter((t) => t.id !== candidate.id);
       }
