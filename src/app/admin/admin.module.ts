@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { BrowserModule } from '@angular/platform-browser';
-import { TableModule } from 'primeng/table';
+
 import { MheaderComponent } from './mheader/mheader.component';
 import { MfooterComponent } from './mfooter/mfooter.component';
 import { WrapperComponent } from './wrapper/wrapper.component';
@@ -21,7 +21,7 @@ import { CandidatesComponent } from './candidates/candidates.component';
 import { CandidatesFormComponent } from './candidates-form/candidates-form.component';
 import { EmployerComponent } from './employer/employer.component';
 import { EmployerFormComponent } from './employer-form/employer-form.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/Forms';
 import { AdminRoutingModule } from './admin-routing.module';
 @NgModule({
   declarations: [
@@ -41,16 +41,16 @@ import { AdminRoutingModule } from './admin-routing.module';
     EmployerComponent,
     EmployerFormComponent,
   ],
-  
+
   imports: [
     NgxDatatableModule,
     BrowserModule,
     CommonModule,
     RouterModule,
-    TableModule,
     FormsModule,
     AdminRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule,
   ],
   exports: [
     MheaderComponent,

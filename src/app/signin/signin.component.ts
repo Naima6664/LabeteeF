@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UntypedFormGroup } from '@angular/forms';
+
 import { FormlyFieldConfig } from '@ngx-formly/core';
 
 @Component({
@@ -12,7 +12,7 @@ export class SigninComponent implements OnInit {
     username: '',
     password: '',
   };
-  form = new UntypedFormGroup({});
+  // form = new UntypedFormGroup({});
   model = {};
   fields: FormlyFieldConfig[] = [
     {

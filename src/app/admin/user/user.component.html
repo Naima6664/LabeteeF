@@ -34,7 +34,7 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <p-table
+                <!-- <p-table
                   #datatable
                   [value]="users"
                   [paginator]="true"
@@ -44,11 +44,11 @@
                   [rowsPerPageOptions]="[10, 15, 20]"
                   [filterDelay]="0"
                   [globalFilterFields]="['full_name', 'user_name', 'email']"
-                >
-                  <ng-template pTemplate="caption">
-                    <div style="text-align: right">
-                      <i class="pi pi-search" style="margin: 4px 4px 0 0"></i>
-                      <input
+                > -->
+                <ng-template pTemplate="caption">
+                  <div style="text-align: right">
+                    <i class="pi pi-search" style="margin: 4px 4px 0 0"></i>
+                    <!-- <input
                         type="text"
                         pInputText
                         size="50"
@@ -60,46 +60,46 @@
                             'contains'
                           )
                         "
-                      />
-                    </div>
-                  </ng-template>
-                  <ng-template pTemplate="header">
-                    <tr>
-                      <th>Full Name</th>
-                      <th>UserName</th>
-                      <th>Email</th>
-                      <th>Role</th>
-                      <th>Actions</th>
-                    </tr>
-                  </ng-template>
-                  <ng-template pTemplate="body" let-user>
-                    <tr>
-                      <td>{{ user.full_name }}</td>
-                      <td>{{ user.user_name }}</td>
-                      <td>{{ user.email }}</td>
-                      <td>{{ getRoleName(user.role_id) }}</td>
+                      /> -->
+                  </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                  <tr>
+                    <th>Full Name</th>
+                    <th>UserName</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                  </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-user>
+                  <tr>
+                    <td>{{ user.full_name }}</td>
+                    <td>{{ user.user_name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ getRoleName(user.role_id) }}</td>
 
-                      <td>
-                        <a
-                          class="btn btn-info btn-sm mr-3"
-                          [routerLink]=""
-                          [routerLink]="['/admin/adduser']"
-                          [queryParams]="{ type: 'edit', id: user.id }"
-                        >
-                          <i class="fas fa-pencil-alt"> </i>
-                          Edit
-                        </a>
-                        <a
-                          class="btn btn-danger btn-sm mr-3"
-                          (click)="onDelete(user)"
-                        >
-                          <i class="fas fa-trash"> </i>
-                          Delete
-                        </a>
-                      </td>
-                    </tr>
-                  </ng-template>
-                </p-table>
+                    <td>
+                      <a
+                        class="btn btn-info btn-sm mr-3"
+                        [routerLink]="['/']"
+                        [routerLink]="['/admin/adduser']"
+                        [queryParams]="{ type: 'edit', id: user.id }"
+                      >
+                        <i class="fas fa-pencil-alt"> </i>
+                        Edit
+                      </a>
+                      <a
+                        class="btn btn-danger btn-sm mr-3"
+                        (click)="onDelete(user)"
+                      >
+                        <i class="fas fa-trash"> </i>
+                        Delete
+                      </a>
+                    </td>
+                  </tr>
+                </ng-template>
+                <!-- </p-table> -->
               </div>
               <!-- /.card-body -->
             </div>

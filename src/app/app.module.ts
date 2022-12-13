@@ -10,7 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SigninComponent } from './signin/signin.component';
 import { FormlyModule } from '@ngx-formly/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/Forms';
 import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 
 @NgModule({
