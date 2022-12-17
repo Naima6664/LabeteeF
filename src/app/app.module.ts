@@ -19,22 +19,23 @@ import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
     LoginComponent,
     NotFoundComponent,
     SigninComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
-    FormlyModule.forRoot({
-      validationMessages: [
-        {
-          name: 'required',
-          message: 'This field is required',
-        },
-      ],
-    }),
-    FormlyBootstrapModule,
+   ReactiveFormsModule,
+  FormlyModule.forRoot({validationMessages: [
+    {
+      name: 'required',
+      message: 'This field is required',
+    },
+  ],}),
+  FormlyBootstrapModule
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [
+    AppComponent
+  ] 
 })
 export class AppModule {}

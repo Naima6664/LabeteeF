@@ -10,6 +10,7 @@
   },
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
     "@angular/animations": "^15.0.3",
     "@angular/cdk": "^14.2.7",
     "@angular/common": "^15.0.3",
@@ -23,11 +24,23 @@
     "@ngx-formly/core": "^6.0.4",
     "@sweetalert2/ngx-sweetalert2": "^12.0.2",
     "@swimlane/ngx-datatable": "^20.1.0",
+=======
+    "@angular/animations": "~13.3.0",
+    "@angular/common": "~13.3.0",
+    "@angular/compiler": "~13.3.0",
+    "@angular/core": "~13.3.0",
+    "@angular/forms": "~13.3.0",
+    "@angular/platform-browser": "~13.3.0",
+    "@angular/platform-browser-dynamic": "~13.3.0",
+    "@angular/router": "~13.3.0",
+>>>>>>> parent of ac39a29 (trying to fix table probelm)
     "bootstrap": "^5.2.2",
     "rxjs": "~7.5.0",
     "sweetalert2": "^11.4.8",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.11.4",
+    "@ngx-formly/core": "^6.0.0",
+    "@ngx-formly/bootstrap": "^6.0.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^15.0.2",
