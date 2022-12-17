@@ -5,7 +5,7 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.scss'],
+  styleUrls: ['./signin.component.scss']
 })
 export class SigninComponent implements OnInit {
   login = {
@@ -22,7 +22,7 @@ export class SigninComponent implements OnInit {
         label: 'Email address',
         placeholder: 'Enter email',
         required: true,
-      },
+      }
     },
     {
       key: 'name',
@@ -31,16 +31,18 @@ export class SigninComponent implements OnInit {
         label: 'username',
         placeholder: 'Enter username',
         required: true,
-      },
-    },
+      }
+    }
   ];
 
-  onSubmit() {
-    console.log();
+  onSubmit(model: any) {
+    console.log(model);
   }
-  onChange(wow: any, data: any) {}
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
+
 }
