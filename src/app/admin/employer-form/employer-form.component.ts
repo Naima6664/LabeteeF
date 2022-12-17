@@ -1,18 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/Forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormlyFieldConfig, FormlyFormOptions } from '@ngx-formly/core';
-import { Router } from 'express';
+
 import Swal from 'sweetalert2';
 import { AdminService } from '../admin.service';
 
 @Component({
   selector: 'app-employer-form',
   templateUrl: './employer-form.component.html',
-  styleUrls: ['./employer-form.component.scss']
+  styleUrls: ['./employer-form.component.scss'],
 })
 export class EmployerFormComponent implements OnInit {
-
   form = new FormGroup({});
   model: any = {};
   fields: FormlyFieldConfig[] = [];
@@ -116,7 +115,7 @@ export class EmployerFormComponent implements OnInit {
           templateOptions: {
             label: 'Description',
             placeholder: 'Job Description',
-  
+
             required: true,
           },
         },
@@ -126,7 +125,7 @@ export class EmployerFormComponent implements OnInit {
           templateOptions: {
             label: 'salary',
             placeholder: 'Salary of the job',
-  
+
             required: true,
           },
         },
@@ -146,7 +145,9 @@ export class EmployerFormComponent implements OnInit {
     }
   }
   async fetchDataForEdit() {
-    var res: any = await this.adminservice.getSingleemployer(this.id).toPromise();
+    var res: any = await this.adminservice
+      .getSingleemployer(this.id)
+      .toPromise();
     console.log('res : ', res);
     this.data = res[0];
     this.model = {
@@ -262,7 +263,7 @@ export class EmployerFormComponent implements OnInit {
     if (this.form.valid) {
       var res = await this.adminservice.addemployer(this.model).toPromise();
 
-      if ((res.statuscode = 200)) {
+      if (res) {
         this.router.navigate(['admin/employers']);
         Swal.fire(
           'Successfully created',
@@ -270,7 +271,7 @@ export class EmployerFormComponent implements OnInit {
           'success'
         );
       } else {
-        console.log(res.er);
+        console.log(res);
       }
     } else {
       // form no vaild
@@ -289,7 +290,7 @@ export class EmployerFormComponent implements OnInit {
           'success'
         );
       } else {
-        console.log(res.er);
+        console.log(res);
       }
     } else {
       // form no vaild

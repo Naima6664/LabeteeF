@@ -1,36 +1,39 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { ApiUrl } from '../app.variable';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AdminService {
   getCandidates() {
-    throw new Error('Method not implemented.');
+    return this.http.get(ApiUrl.Photos);
   }
   deleteCandidate(candidate: CANDIDATE) {
-    throw new Error('Method not implemented.');
+    return this.http.get(ApiUrl.Photos);
   }
   getSingleemployer(id: any) {
-    throw new Error('Method not implemented.');
+    return this.http.get(ApiUrl.Photos);
   }
   addCandidate(model: any) {
-    throw new Error('Method not implemented.');
+    return this.http.get(ApiUrl.Photos);
   }
   updateCandidate(model: any) {
-    throw new Error('Method not implemented.');
+    return this.http.get(ApiUrl.Photos);
   }
   getSingleCandidate(id: number) {
-  return 0;
+    return this.http.get(ApiUrl.Photos);
   }
   updateemployer(model: any) {
-    throw new Error('Method not implemented.');
+    return this.http.get(ApiUrl.Photos);
   }
   addemployer(model: any) {
-    throw new Error('Method not implemented.');
+    return this.http.get(ApiUrl.Photos);
   }
   getemployer() {
-    throw new Error('Method not implemented.');
+    return this.http.get(ApiUrl.Photos);
   }
 
   constructor(private http: HttpClient) {}
@@ -41,24 +44,24 @@ export interface EMPLOYER {
   full_name: string;
   employer_name: string;
   email: string;
-  place:string;
-  job_type:string;
-  job_describtion:string;
-  salary:number;
+  place: string;
+  job_type: string;
+  job_describtion: string;
+  salary: number;
   password: string;
   role_id: number;
 }
 export interface CANDIDATE {
-First: any;
-job: any;
+  First: any;
+  job: any;
   subscribe(arg0: () => CANDIDATE[]): unknown;
   id?: number;
-  First_name:String;
-  Last_name:String;
-  Place:String;
-  Language:String;
-  job_type:String;
-  Expriance:String;
-  salary:number
+  First_name: String;
+  Last_name: String;
+  Place: String;
+  Language: String;
+  job_type: String;
+  Expriance: String;
+  salary: number;
   role_id: number;
 }

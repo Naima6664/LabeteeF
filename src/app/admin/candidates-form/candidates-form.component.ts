@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/Forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormlyFieldConfig, FormlyFormOptions } from '@ngx-formly/core';
-import { Router } from 'express';
+
 import Swal from 'sweetalert2';
 import { AdminService } from '../admin.service';
 import 'rxjs/add/operator/toPromise';
@@ -11,10 +11,9 @@ import 'rxjs/add/operator/map';
 @Component({
   selector: 'app-candidates-form',
   templateUrl: './candidates-form.component.html',
-  styleUrls: ['./candidates-form.component.scss']
+  styleUrls: ['./candidates-form.component.scss'],
 })
 export class CandidatesFormComponent implements OnInit {
-
   form = new FormGroup({});
   model: any = {};
   fields: FormlyFieldConfig[] = [];
@@ -118,7 +117,7 @@ export class CandidatesFormComponent implements OnInit {
           templateOptions: {
             label: 'Expriance',
             placeholder: 'Expriance',
-  
+
             required: true,
           },
         },
@@ -128,7 +127,7 @@ export class CandidatesFormComponent implements OnInit {
           templateOptions: {
             label: 'salary',
             placeholder: 'Salary of the job',
-  
+
             required: true,
           },
         },
@@ -218,7 +217,7 @@ export class CandidatesFormComponent implements OnInit {
     if (this.form.valid) {
       var res = await this.adminservice.addCandidate(this.model).toPromise();
 
-      if ((res.statuscode = 200)) {
+      if (res) {
         this.router.navigate(['admin/candidates']);
         Swal.fire(
           'Successfully created',
@@ -226,7 +225,7 @@ export class CandidatesFormComponent implements OnInit {
           'success'
         );
       } else {
-        console.log(res.er);
+        console.log(res);
       }
     } else {
       // form no vaild
@@ -245,7 +244,7 @@ export class CandidatesFormComponent implements OnInit {
           'success'
         );
       } else {
-        console.log(res.er);
+        console.log(res);
       }
     } else {
       // form no vaild
