@@ -21,12 +21,6 @@ import { CommonModule } from '@angular/common';
   ],
 
   imports: [BrowserModule, CommonModule, RouterModule],
-  exports: [
-    MheaderComponent,
-    MfooterComponent,
-    SidebarComponent,
-    WrapperComponent,
-    SidebarcComponent,
-  ],
+  exports: [],
 })
 export class AdminModule {}
