@@ -3,7 +3,7 @@ import { FormGroup } from '@angular/Forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormlyFieldConfig, FormlyFormOptions } from '@ngx-formly/core';
 
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
 import { AdminService } from '../admin.service';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
